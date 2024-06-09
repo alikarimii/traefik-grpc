@@ -1,0 +1,17 @@
+syntax="proto3";
+option go_package="github.com/alikarimii/traefik-grpc/client;proto";
+package nest;
+
+service AuthService {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
+message LoginRequest {
+    string username = 1;
+    string password = 2;    
+}
+message LoginResponse {
+    string access_token = 1;
+    string refresh_token = 2;
+    int32 exp = 3;
+    repeated string roles = 4;
+}

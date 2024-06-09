@@ -1,0 +1,6 @@
+- name: start nestjs-grpc and traefik and client in one docker network to comiunicatie with each other
+  hosts: localhost
+  roles:
+    - role: ansible-role-traefik
+    - role: ansible-role-nestgrpc
+    - role: ansible-role-client
